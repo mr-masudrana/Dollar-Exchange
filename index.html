@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dollar Buy Sell</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="bg-dark text-white">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">BUYSLLUSD</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Exchange</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Affiliate</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="container my-5">
+    <div class="text-center mb-4">
+      <h2>Exchange Form</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form id="exchangeForm" class="bg-light p-4 rounded text-dark">
+          <div class="mb-3">
+            <label for="sendCurrency" class="form-label">Send</label>
+            <select class="form-select" id="sendCurrency">
+              <option value="USDT">USDT (TRC) USD</option>
+              <option value="PayPal">PayPal USD</option>
+              <option value="Nagad">Nagad BDT</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <input type="number" class="form-control" id="sendAmount" placeholder="Enter amount">
+            <div class="form-text">Exchange rate: 1 USD = 0.99 USD</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="receiveCurrency" class="form-label">Receive</label>
+            <select class="form-select" id="receiveCurrency">
+              <option value="USDT">USDT (TRC) USD</option>
+              <option value="Payoneer">Payoneer USD</option>
+              <option value="bKash">bKash BDT</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <input type="text" class="form-control" id="receiveAmount" disabled>
+            <div class="form-text">Reserve: 948.98 USD</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Your username">
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Exchange</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h3 class="text-center mb-3">Pending Exchanges</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-white">
+        <thead class="table-dark">
+          <tr>
+            <th>Send</th>
+            <th>Received</th>
+            <th>Amount</th>
+            <th>Username</th>
+            <th>Date & Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="pendingTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <h3 class="text-center mb-3">Completed Exchanges</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-white">
+        <thead class="table-dark">
+          <tr>
+            <th>Send</th>
+            <th>Received</th>
+            <th>Amount</th>
+            <th>Username</th>
+            <th>Date & Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="completedTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
